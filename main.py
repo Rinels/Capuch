@@ -1,3 +1,4 @@
+import sys
 import sqlite3
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
@@ -21,7 +22,7 @@ class CoffeeApp(QMainWindow):
         conn.close()
 
 if __name__ == "__main__":
-    app = QApplication([])
+    app = QApplication(sys.argv)
     window = CoffeeApp()
     window.show()
-    app.exec()
+    sys.exit(app.exec())
